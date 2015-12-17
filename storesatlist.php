@@ -1,6 +1,6 @@
 <?php
 
-include './db.php';\
+include './db.php';
 session_start() ;
 $store_id=$_SESSION['store_id'];
 $d1 = $_GET['date1'];

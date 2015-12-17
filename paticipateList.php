@@ -15,7 +15,8 @@ where m.mem_id = ar.mem_id
 and a.act_id=ar.act_id 
 and start_date between '".$d1."' and '".$d2."'
 and act_name like '%".$active."%'
-group by act_name ");}
+group by act_name ");
+}
 else{
   $stmt = $conn->query("select act_name,CONCAT(start_date, '~', end_date)as date,count(ar.mem_id) as actcount,
 ROUND(COUNT(ar.mem_id)/(SELECT COUNT(mem_id) FROM member)*100,2) AS percent
