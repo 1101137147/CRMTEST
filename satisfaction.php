@@ -3,12 +3,6 @@ include './db.php';
 session_start();
 $store_id = $_SESSION['store_id'];
 header("Content-Type:text/html; charset=utf-8");
-//$stmt = $conn->prepare("SELECT subname,path FROM subfunction WHERE functionid='1'");
-//$stmt->execute();
-//$res='';
-//foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
-//    $res.='<li><a href="' . $row['path'] . '.php" style="font-size:12pt" rel="external">' . $row['subname'] . '</a></li>';
-//}
 $stmt2 = $conn->prepare("SELECT qst_name  FROM questionnaire  where qst_type='act' and questionnaire.store_id='" . $store_id . "'");
 $stmt2->execute();
 $res2 = '';
@@ -93,11 +87,7 @@ foreach ($stmt2->fetchAll(PDO::FETCH_ASSOC) as $row) {
                 <a href="index.php" rel="external" class="ui-btn ui-btn-inline ui-corner-all ui-icon-home ui-shadow ui-btn-icon-left" style="margin-top:2%;font-size:120%;">首頁</a>
                 <a href="active.php" rel="external" class="ui-btn ui-btn-inline ui-corner-all ui-icon-back ui-shadow ui-btn-icon-left" style="margin-top:2%;font-size:120%;">返回</a>
                 <h1 id="title">活動滿意度</h1>
-                <!--                <div data-role="navbar" >
-                                    <ul>
-<?php // echo $res;  ?>
-                                    </ul>
-                                </div>-->
+              
             </div>
 
             <div data-role="main" class="ui-content">
@@ -128,13 +118,7 @@ foreach ($stmt2->fetchAll(PDO::FETCH_ASSOC) as $row) {
                         </td>
             　</tr>
                 </table>
-              <!--  <table align="center">
-                   
-                    <tr id="actname">  </tr><br>  
-                    <tr id="info1" class="ui-responsive" border="1">      </tr>
-                </table> -->
-<!--                <table id="info1" data-role="table"  class="ui-responsive" border="1">
-                </table>-->
+    
 
                 <div id="qusum">
 

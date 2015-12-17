@@ -1,12 +1,5 @@
 <?php 
-//include './db.php';
-//header("Content-Type:text/html; charset=utf-8");
-//$stmt = $conn->prepare("SELECT functionname,path FROM `function`");
-//$stmt->execute();
-//$res = '';
-//foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
-//    $res.='<li ><a href="' . $row['path'] . '.php" style="font-size:12pt">' . $row['functionname'] . '</a></li>';
-//}
+
 ?>
 <html>
     <head>

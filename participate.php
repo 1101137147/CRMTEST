@@ -3,12 +3,6 @@ include './db.php';
 session_start() ;
 $store_id=$_SESSION['store_id'];
 header("Content-Type:text/html; charset=utf-8");
-//$stmt = $conn->prepare("SELECT subname,path FROM subfunction WHERE functionid='1'");
-//$stmt->execute();
-//$res='';
-//foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
-//    $res.='<li><a href="' . $row['path'] . '.php" style="font-size:50pt; letter-spacing: 20PX;" rel="external">' . $row['subname'] . '</a></li>';
-//}
 $stmt2 = $conn->prepare("SELECT act_name  FROM activity where activity.store_id='2'");
 $stmt2->execute();
 $res2 = '';
@@ -37,8 +31,6 @@ foreach ($stmt2->fetchAll(PDO::FETCH_ASSOC) as $row) {
                     var d1 = $("#date1").val();
                     var d2 = $("#date2").val();
                     var active = $("#active").val();
-                    //   document.getElementById("actname").innerHTML = active;
-                    //    /alert( d1 +"and"+ d2);/
                     if((d1!=='')&&(d2!=='')){
                          if(d1>d2){
                             alert("開始日期不能大於結束日期");
@@ -51,7 +43,6 @@ foreach ($stmt2->fetchAll(PDO::FETCH_ASSOC) as $row) {
                         success: function(memsum) {
                             document.getElementById("memsum").innerHTML = memsum;
                             $('#info1').DataTable();
-                            //$("#info1").html(info1); 
                         },
                         error: function(memsum) {
                             document.getElementById("memsum").innerHTML = "error";
@@ -79,7 +70,7 @@ foreach ($stmt2->fetchAll(PDO::FETCH_ASSOC) as $row) {
             }
             #title{
                 font-size: 250%;
-                letter-spacing: 15PX;  //文字間距
+                letter-spacing: 15PX;  
             }
 
         </style>
@@ -90,11 +81,6 @@ foreach ($stmt2->fetchAll(PDO::FETCH_ASSOC) as $row) {
                 <a href="index.php" rel="external" class="ui-btn ui-btn-inline ui-corner-all ui-icon-home ui-shadow ui-btn-icon-left" style="margin-top:2%;font-size:120%;">首頁</a>
                 <a href="active.php" rel="external" class="ui-btn ui-btn-inline ui-corner-all ui-icon-back ui-shadow ui-btn-icon-left" style="margin-top:2%;font-size:120%;">返回</a>
                 <h1 id="title">活動參與率</h1>
-                <!--                <div data-role="navbar" >
-                                    <ul>
-                <?php // echo $res; ?>
-                                    </ul>
-                                </div>-->
             </div>
 
             <div data-role="main" class="ui-content">
@@ -126,13 +112,7 @@ foreach ($stmt2->fetchAll(PDO::FETCH_ASSOC) as $row) {
                         </td>
             　</tr>
                 </table>
-              <!--  <table align="center">
-                   
-                    <tr id="actname">  </tr><br>  
-                    <tr id="info1" class="ui-responsive" border="1">      </tr>
-                </table> -->
-<!--                <table id="info1" data-role="table"  class="ui-responsive" border="1">
-                </table>-->
+
                 <div id="memsum">
                     
                 </div>
