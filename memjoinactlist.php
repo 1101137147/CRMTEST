@@ -13,9 +13,6 @@ and act.act_id=a.act_id
 and act.store_id='".$store_id."'
 and join_date between '".$num1."' and '".$num2."'
 Group by name,gender,cellphone");
-//$stmt = $conn->query("select act_name,name,start_date,end_date 
-//          from member,activity,act_record 
-//          where activity.act_id=act_record.act_id and act_record.mem_id=member.mem_id and start_date between '".$d1."' and '".$d2."' and act_name='".$active."'");
 $stmt2 = $conn->query("select count(act_name)as act
 From activity
 where store_id='".$store_id."'

@@ -3,13 +3,6 @@ include './db.php';
 session_start() ;
 $store_id=$_SESSION['store_id'];
 header("Content-Type:text/html; charset=utf-8");
-
-//$stmt = $conn->prepare("SELECT subname,path  FROM subfunction WHERE functionid='2'");
-//$stmt->execute();
-//$res='';
-//foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
-//    $res.='<li><a href="' . $row['path'] . '.php" style="font-size:12pt" rel="external">' . $row['subname'] . '</a></li>';
-//}
 ?>
 <html>
     <head>
@@ -97,7 +90,7 @@ header("Content-Type:text/html; charset=utf-8");
             }
             #title{
                 font-size: 250%;
-                letter-spacing: 15PX;  /*文字間距*/
+                letter-spacing: 15PX;
             }
         </style>
     </head>

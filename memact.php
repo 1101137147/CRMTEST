@@ -1,18 +1,5 @@
 <?php
-//include './db.php';
-//header("Content-Type:text/html; charset=utf-8");
-//$stmt = $conn->prepare("SELECT subname,path  FROM subfunction WHERE functionid='2'");
-//$stmt->execute();
-//$res='';
-//foreach($stmt->fetchAll(PDO::FETCH_ASSOC) as $row){
-//    $res.='<li><a href="'.$row['path'].'.php" style="font-size:12pt" rel="external">'.$row['subname'].'</a></li>';
-//}
-//$stmt2 = $conn->prepare("SELECT act_name  FROM activity");
-//$stmt2->execute();
-//$res2='';
-//foreach($stmt2->fetchAll(PDO::FETCH_ASSOC) as $row){
-//    $res2.='<option value="'.$row['act_name'].'">'.$row['act_name'].'</option>';
-//}
+
 ?>
 <html>
     <head>
@@ -34,7 +21,6 @@
                 $("#btn1").click(function() {
                     var num1 = $("#date1").val();
                     var num2 = $("#date2").val();
-                    // var active = $("#active").val();
                     /alert( d1 +"and"+ d2);/
                     if((num1!=='')&&(num2!=='')){
                        if(num1>num2){
@@ -48,7 +34,6 @@
                         success: function(info) {
                             document.getElementById("info").innerHTML = info;
                             $('#info1').DataTable();
-                            //$("#info1").html(info1); 
                         },
                         error: function(info) {
                             document.getElementById("info").innerHTML = "error";
@@ -64,13 +49,6 @@
 
         </script>
         <style>
-            /*            th {
-                            border-bottom: 1px solid #d6d6d6;         
-                        }
-            
-                        tr:nth-child(even) {
-                            background: #e9e9e9;
-                        }*/
             #info1 tr:nth-child(even) {
                 background:#d0d0d0;
             }
@@ -84,7 +62,7 @@
             }
             #title{
                 font-size: 250%;
-                letter-spacing: 25PX;  //文字間距
+                letter-spacing: 25PX;  
             }
 
         </style>
@@ -95,11 +73,6 @@
                 <a href="index.php" rel="external" class="ui-btn ui-btn-inline ui-corner-all ui-icon-home ui-shadow ui-btn-icon-left" style="margin-top:2%;font-size:120%;">首頁</a>
                 <a href="member.php" rel="external" class="ui-btn ui-btn-inline ui-corner-all ui-icon-back ui-shadow ui-btn-icon-left" style="margin-top:2%;font-size:120%;">返回</a>
                 <h1 id="title">會員購買活躍率</h1>
-                <!--                <div data-role="navbar" >
-                                    <ul>
-                <?php // echo  $res; ?>
-                                    </ul>
-                                </div>-->
             </div>
             <div data-role="main" class="ui-content">     
                 <table border="0" align="center">
@@ -123,8 +96,6 @@
                         </td>
             　</tr>
                 </table>
-<!--                    <table id="info1" data-role="table"  class="ui-responsive" border="1">
-                    </table>-->
                 <div  id="info" >
                     
                 </div>
