@@ -30,9 +30,9 @@ $stmt = $conn->query("select  qb.qst_name,answer
 $msg = '<table id="info1" data-role="table"  class="ui-responsive" border="1">';
 $msg.='<thead><tr><th>問卷題目</th><th>非常滿意</th><th>百分比</th><th>滿意</th><th>百分比</th><th>不滿意</th><th>百分比</th><th>非常不滿意</th><th>百分比</th></tr></thead><tbody>';
 foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
-    if ($temp_name == "")
+    if ($temp_name == ""){
         $temp_name = $row['qst_name'];
-        
+    }
     if ($temp_name != $row['qst_name']) {
         $numa = round(($a / ($a + $b + $c + $d)), 4) * 100;    //計算非常滿意的百分比
         $numb = round(($b / ($a + $b + $c + $d)), 4) * 100;  //計算滿意的百分比
