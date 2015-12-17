@@ -3,12 +3,12 @@ include './db.php';
 session_start() ;
 $store_id=$_SESSION['store_id'];
 
-$d1=$_GET['date1'];                  //開始日期     1
-$d2=$_GET['date2'];                  //結束日期
-$gender=$_GET['gender'];             //性別         2 
-$buyquantity=$_GET['buyquantity'];   //購買次數     3
-$qdquantity=$_GET['qdquantity'];     //填寫問卷次數 4
-$totalpoint=$_GET['totalpoint'];     //總點數       5
+$d1=$_GET['date1'];               
+$d2=$_GET['date2'];                  
+$gender=$_GET['gender'];             
+$buyquantity=$_GET['buyquantity'];   
+$qdquantity=$_GET['qdquantity'];     
+$totalpoint=$_GET['totalpoint'];     
 
 if(empty($d1)){
     if(empty($gender)){

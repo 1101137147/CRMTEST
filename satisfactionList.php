@@ -1,6 +1,6 @@
 <?php
 
-include './db.php';\
+include './db.php';
 session_start() ;
 $store_id=$_SESSION['store_id'];
 $d1 = $_GET['date1'];
@@ -10,10 +10,10 @@ $a = 0;
 $b = 0;
 $c = 0;
 $d = 0;
-$numa = 0; //算非常滿意百分比的變數
-$numb = 0; //算滿意百分比的變數
-$numc = 0; //算不滿意百分比的變數
-$numd = 0; //算非常不滿意百分比的變數
+$numa = 0; 
+$numb = 0; 
+$numc = 0; 
+$numd = 0; 
 $sum=0;
 $temp_name = "";
 
@@ -34,10 +34,10 @@ foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
         $temp_name = $row['qst_name'];
     }        
     if ($temp_name != $row['qst_name']) {
-        $numa = round(($a / ($a + $b + $c + $d)), 4) * 100;    //計算非常滿意的百分比
-        $numb = round(($b / ($a + $b + $c + $d)), 4) * 100;  //計算滿意的百分比
-        $numc = round(($c / ($a + $b + $c + $d)), 4) * 100; //計算不滿意的百分比
-        $numd = round(($d / ($a + $b + $c + $d)), 4) * 100; //計算非常不滿意的百分比
+        $numa = round(($a / ($a + $b + $c + $d)), 4) * 100;  
+        $numb = round(($b / ($a + $b + $c + $d)), 4) * 100;  
+        $numc = round(($c / ($a + $b + $c + $d)), 4) * 100; 
+        $numd = round(($d / ($a + $b + $c + $d)), 4) * 100; 
         $msg.="<tr><td>" . $temp_name . "</td>";
         $msg.="<td>" . $a . "</td>";
         $msg.="<td>" . $numa ."%"."</td>";
@@ -68,9 +68,9 @@ foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
     }
 }
 
-$numa = round(($a / ($a + $b + $c + $d)), 4) * 100;    //計算非常滿意的百分比
-$numb = round(($b / ($a + $b + $c + $d)), 4) * 100;  //計算滿意的百分比
-$numc = round(($c / ($a + $b + $c + $d)), 4) * 100; //計算不滿意的百分比
+$numa = round(($a / ($a + $b + $c + $d)), 4) * 100; 
+$numb = round(($b / ($a + $b + $c + $d)), 4) * 100; 
+$numc = round(($c / ($a + $b + $c + $d)), 4) * 100; 
 $numd = round(($d / ($a + $b + $c + $d)), 4) * 100;
 $msg.="<tr><td>" . $temp_name . "</td>";
 $msg.="<td>" . $a . "</td>";
