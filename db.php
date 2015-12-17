@@ -1,6 +1,5 @@
 <?php
 $servername = 'localhost';
-
 $dbname = 'test';
 
 try {
